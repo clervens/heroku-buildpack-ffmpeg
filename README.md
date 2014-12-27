@@ -14,19 +14,19 @@ To use this buildpack, you should prepare .buildpacks file that contains this bu
     
     $ cat .buildpacks
     https://github.com/shunjikonishi/heroku-buildpack-ffmpeg
-    https://github.com/heroku/heroku-buildpack-play
+    https://github.com/heroku/heroku-buildpack-nodejs
 
     $ heroku create --buildpack https://github.com/ddollar/heroku-buildpack-multi
 
     $ git push heroku master
     ...
 
-You can verify installing ffmpeg by following command.
+You can verify installing ffmpeg by following command. (Must be 2.5.1 Dec 18 2014)
 
-    $ heroku run "ffmpeg -version"
+    $ heroku run ffmpeg --version
 
 Hacking
 -------
 If you want to use your own ffmpeg binary, fork and rewrite following line.
 
-https://github.com/shunjikonishi/heroku-buildpack-ffmpeg/blob/master/bin/compile#L10
+https://github.com/clervens/heroku-buildpack-ffmpeg/blob/master/bin/compile#L10
